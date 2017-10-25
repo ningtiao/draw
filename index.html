@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<script src="jquery.min.js"></script>
+<script src="rotaryDraw.js"></script>
+<title>jQuery手机端转盘抽奖插件 - 站长素材</title>
+</head>
+<body>
+    <div class="banner">
+        <img src="images/banner_bg.jpg" class="banner-draw" alt="">
+        <img src="images/banner_text.png" class="banner-text">
+    </div>
+    <div class="box">
+        <img src="images/z1.png" class="img01" alt="">
+        <img src="images/z2.png" class="drawBtn">
+    </div>
+
+    <div id="draw-content">
+        <img src="images/title1.png" class="title-img">
+    </div>
+    <div class="lottery-rules">
+        <li>
+            <img src="images/p1.png">
+            <span class="lottert-text">神秘奖: 学客价值3000元精英会员</span>
+        </li>
+        <li>
+            <img src="images/p2.png">
+            <span class="lottert-text">麻省理工: 学客商城4折优惠券</span>
+        </li>
+        <li>
+            <img src="images/p3.png">
+            <span class="lottert-text">斯坦福: 学客商城5折优惠券</span>
+        </li>
+        <li>
+            <img src="images/p4.png">
+            <span class="lottert-text">牛津: 学客商城6折优惠券</span>
+        </li>
+        <li>
+            <img src="images/p5.png">
+            <span class="lottert-text">哈佛: 学客商城7折优惠券</span>
+        </li>
+        <li>
+            <img src="images/p6.png">
+            <span class="lottert-text">剑桥: 学客商城8折优惠券</span>
+        </li>
+        <li>
+            <img src="images/p7.png">
+            <span class="lottert-text">光棍奖: 5元微信现金红包</span>
+        </li>
+    </div>
+    <div class="activity-content">
+        <img src="images/title2.png" class="title-img">
+    </div>
+
+<script>
+$(".box .img01").load(function() {
+	var obj = $(".drawBtn");
+	var hei = $(this).height();
+	var hei2 = obj.height();
+	obj.css("top",(hei - hei2)/2);
+});
+$(".box1 .img01").load(function() {
+	var obj = $(".drawBtn2");
+	var hei = $(this).height();
+	var hei2 = obj.height();
+	obj.css("top",(hei - hei2)/2);
+});
+</script>
+<script>
+//share份额[数字没有默认],
+//speed速度[单位s,最小0.1s],
+//velocityCurve速度曲线[linear匀速，ease慢快慢，ease-in慢慢开始，ease-out慢慢结束，ease-in-out慢快慢等，用的是css3的速度曲线],可以不写，ease默认值；
+//callback回调函数
+//weeks几周[默认2周，可以不写]
+
+//几份和回调函数这两个参数是必填
+
+
+function callbackA(ind){
+	alert("第一个回调"+ind);
+};
+function callbackB(ind){
+	alert("第二个回调"+ind);
+};
+var newdraw =new turntableDraw('.drawBtn',{
+	share:10,
+	speed:"5s",
+	velocityCurve:"ease",
+	weeks:6,
+	callback:function(num)
+	{
+		callbackA(num);
+	},
+});
+var isture = true
+$(".drawBtn").click(function(event) {
+	//ajax
+	alert(isture)
+	if(isture == true){
+		isture = false
+		newdraw.goto(parseInt(Math.random()*8)+1);
+		
+	}else if(isture == false){
+		alert('没有次数了')
+	}
+	
+
+});
+
+</script>
+
+</body>
+</html>
+<style>
+*{padding:0;margin:0;}
+body{
+    background:#371583
+;
+}
+.box{
+	position:relative;
+	max-width:750px;
+	margin:0 auto;
+}
+.box .img01{
+	width:100%;
+}
+.box .drawBtn{
+	position:absolute;
+	width:10rem;
+	height:auto;
+	left:50%;
+	margin-left:-5rem;
+}
+#draw-content{
+    position:relative;
+    max-width:750px;
+    margin: 4px;
+    height: 60px;
+}
+#draw-content .title-img{
+    width:100%;
+    margin-top: 1rem;
+ }
+.activity-content{
+    position:relative;
+    max-width:750px;
+    margin: 0 .4rem;
+    height: 30px;
+    margin-bottom: 40px;
+}
+.activity-content .title-img{
+    width:100%;
+    margin-top: .7rem;
+}
+.banner{
+    position:relative;
+    max-width:750px;
+    margin:0 auto;
+}
+.fotter-text{
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 1rem;
+    z-index: -111;
+    opacity: 0.4;
+}
+.banner .banner-draw{
+    width:100%;
+}
+.banner .banner-text{
+	position: absolute;
+	width: 260px;
+	height: auto;
+	top: 55px;
+	left: 50%;
+	margin-left: -130px;
+}
+.lottery-rules{
+    position:relative;
+    max-width:750px;
+  
+}
+.lottery-rules li{
+    position:relative;
+    max-width:750px;
+    margin: 4px;
+    height: 40px;
+    list-style: none;
+}
+.lottery-rules li img{
+    float: left;
+    width:72px;
+    height: 38px;
+}
+.lottert-text{
+    font-size: 16px;
+   color:#ffed8b;
+    float: left;
+    margin-left: 30px;
+    line-height: 38px;
+}
+
+</style>
