@@ -15,9 +15,8 @@ git clone https://github.com/yjx-passion/vue2.0-module
 ## 项目截图
 
 ## 转盘
-
+![image](https://github.com/yjx-passion/draw/blob/master/draw-img/draw1.png)
 ![image](https://github.com/yjx-passion/draw/blob/master/draw-img/2.png)
 
 ## 转盘
-![image](https://github.com/yjx-passion/draw/blob/master/draw-img/draw
-1.png)
+
