@@ -4,8 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 <script src="jquery.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="index.css">
 <script src="rotaryDraw.js"></script>
-<title>jQuery手机端转盘抽奖插件 - 站长素材</title>
+<title>转盘抽奖</title>
 </head>
 <body>
     <div class="banner">
@@ -54,6 +57,19 @@
         <img src="images/title2.png" class="title-img">
     </div>
 
+    <!-- 模态框（Modal） -->
+    <div id="apply4" class="modal fade padding1 in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-content">
+            <div class="modal-body">
+                <div class="img1">
+                    <img src="images/gp_bg.png" class="gpbg">
+                    <span class="draw-cgl"><img src="images/cgl.png" class="cgl"></span>
+                    <span class="draw-title" >获得"剑桥"奖</span>
+                    <span class="but5"  ><img src="images/btn.png" data-dismiss="modal"></span>
+                </div>
+            </div>
+        </div>
+    </div>
 <script>
 $(".box .img01").load(function() {
 	var obj = $(".drawBtn");
@@ -78,12 +94,74 @@ $(".box1 .img01").load(function() {
 //几份和回调函数这两个参数是必填
 
 
-function callbackA(ind){
-	alert("第一个回调"+ind);
-};
-function callbackB(ind){
-	alert("第二个回调"+ind);
-};
+function callbackA(drawId){
+	 if(drawId == '1'){
+      $('.gpbg').attr("src","images/gp_bg.png")
+      $('.cgl').attr("src","images/cgl.png")
+      $('.draw-title').text('获得"剑桥"奖')
+      $('#apply4').modal({
+          keyboard: true
+      })
+  } else if(drawId == '2'){
+      $('.gpbg').attr("src","images/gp_bg.png")
+      $('.cgl').attr("src","images/cgl.png")
+      $('.draw-title').text('获得"神秘奖"'),
+      $('#apply4').modal({
+          keyboard: true
+      })
+
+  } else if(drawId == '3'|| drawId == '6'||drawId == '9') {
+      $('.gpbg').attr("src","images/gp_bg.png")
+      $('.cgl').attr("src","images/vp.png")
+      $('.draw-title').text('您未中奖')
+      $('#apply4').modal({
+          keyboard: true
+      })
+  } else if(drawId == '4') {
+      $('.gpbg').attr("src","images/gp_bg.png")
+      $('.cgl').attr("src","images/cgl.png")
+      $('.draw-title').text('获得"麻省理工"奖')
+      $('#apply4').modal({
+          keyboard: true
+      })
+  } else if(drawId == '5'){
+      $('.gpbg').attr("src","images/gp_bg.png")
+      $('.cgl').attr("src","images/cgl.png")
+      $('.draw-title').text('获得"斯坦福"奖')
+      $('#apply4').modal({
+          keyboard: true
+      })
+  }else if(drawId == '7'){
+      $('.gpbg').attr("src","images/gp_bg.png")
+      $('.cgl').attr("src","images/cgl.png")
+      $('.draw-title').text('获得"牛津"奖')
+      $('#apply4').modal({
+          keyboard: true
+      })
+  }else if(drawId == '8'){
+      $('.gpbg').attr("src","images/gp_bg.png")
+      $('.cgl').attr("src","images/cgl.png")
+      $('.draw-title').text('获得"哈佛"奖')
+      $('#apply4').modal({
+          keyboard: true
+      })
+  }else if(drawId == '10'){
+      $('.gpbg').attr("src","images/vp.png")
+      $('.cgl').attr("src","images/cgl.png")
+      $('.draw-title').text('获得"光棍"奖')
+      $('#apply4').modal({
+          keyboard: true
+      })
+
+  }else if(today >'5'){
+      $('.gpbg').attr("src","images/gp_bg.png")
+      $('.cgl').attr("src","images/vp.png")
+      $('.draw-title').text('明天再来')
+      $('#apply4').modal({
+          keyboard: true
+      })
+}
+}
 var newdraw =new turntableDraw('.drawBtn',{
 	share:10,
 	speed:"5s",
@@ -105,103 +183,9 @@ $(".drawBtn").click(function(event) {
 	}else if(isture == false){
 		alert('没有次数了')
 	}
-	
-
 });
 
 </script>
 
 </body>
 </html>
-<style>
-*{padding:0;margin:0;}
-body{
-    background:#371583
-;
-}
-.box{
-	position:relative;
-	max-width:750px;
-	margin:0 auto;
-}
-.box .img01{
-	width:100%;
-}
-.box .drawBtn{
-	position:absolute;
-	width:10rem;
-	height:auto;
-	left:50%;
-	margin-left:-5rem;
-}
-#draw-content{
-    position:relative;
-    max-width:750px;
-    margin: 4px;
-    height: 60px;
-}
-#draw-content .title-img{
-    width:100%;
-    margin-top: 1rem;
- }
-.activity-content{
-    position:relative;
-    max-width:750px;
-    margin: 0 .4rem;
-    height: 30px;
-    margin-bottom: 40px;
-}
-.activity-content .title-img{
-    width:100%;
-    margin-top: .7rem;
-}
-.banner{
-    position:relative;
-    max-width:750px;
-    margin:0 auto;
-}
-.fotter-text{
-    width: 100%;
-    text-align: center;
-    font-size: 16px;
-    margin-bottom: 1rem;
-    z-index: -111;
-    opacity: 0.4;
-}
-.banner .banner-draw{
-    width:100%;
-}
-.banner .banner-text{
-	position: absolute;
-	width: 260px;
-	height: auto;
-	top: 55px;
-	left: 50%;
-	margin-left: -130px;
-}
-.lottery-rules{
-    position:relative;
-    max-width:750px;
-  
-}
-.lottery-rules li{
-    position:relative;
-    max-width:750px;
-    margin: 4px;
-    height: 40px;
-    list-style: none;
-}
-.lottery-rules li img{
-    float: left;
-    width:72px;
-    height: 38px;
-}
-.lottert-text{
-    font-size: 16px;
-   color:#ffed8b;
-    float: left;
-    margin-left: 30px;
-    line-height: 38px;
-}
-
-</style>

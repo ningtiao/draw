@@ -1,0 +1,152 @@
+<style>
+*{padding:0;margin:0;}
+body{
+    background:#371583
+;
+}
+.box{
+	position:relative;
+	max-width:750px;
+	margin:0 auto;
+}
+.box .img01{
+	width:100%;
+}
+.box .drawBtn{
+	position:absolute;
+	width:10rem;
+	height:auto;
+	left:50%;
+	margin-left:-5rem;
+}
+#draw-content{
+    position:relative;
+    max-width:750px;
+    margin: 4px;
+    height: 60px;
+}
+#draw-content .title-img{
+    width:100%;
+    margin-top: 1rem;
+ }
+.activity-content{
+    position:relative;
+    max-width:750px;
+    margin: 0 .4rem;
+    height: 30px;
+    margin-bottom: 40px;
+}
+.activity-content .title-img{
+    width:100%;
+    margin-top: .7rem;
+}
+.banner{
+    position:relative;
+    max-width:750px;
+    margin:0 auto;
+}
+.fotter-text{
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 1rem;
+    z-index: -111;
+    opacity: 0.4;
+}
+.banner .banner-draw{
+    width:100%;
+}
+.banner .banner-text{
+	position: absolute;
+	width: 260px;
+	height: auto;
+	top: 55px;
+	left: 50%;
+	margin-left: -130px;
+}
+.lottery-rules{
+    position:relative;
+    max-width:750px;
+  
+}
+.lottery-rules li{
+    position:relative;
+    max-width:750px;
+    margin: 4px;
+    height: 40px;
+    list-style: none;
+}
+.lottery-rules li img{
+    float: left;
+    width:72px;
+    height: 38px;
+}
+.lottert-text{
+    font-size: 16px;
+   color:#ffed8b;
+    float: left;
+    margin-left: 30px;
+    line-height: 38px;
+}
+.modal {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+/* 模态框 - 办理 */
+.modal-content {
+    background-color:transparent;
+    box-shadow: none !important;
+    border-radius:0 !important;
+    border: none !important;
+}
+.modal-dialog .modal-body{padding-left:20px;padding-right:20px}
+.modal-dialog .media{width:100%; display:table;}
+.modal-dialog .media-body{vertical-align:middle;margin:30px auto; width:60%; display:table-cell}
+.media{display:inline-block}
+
+.padding1 .modal-dialog{ border-radius:20px; -webkit-border-radius:20px;}
+.padding1 .modal-body { padding:0px; position:relative;height: 9rem !important;}
+.padding1 .modal-body .img1 img{
+    width: 260px;
+    margin: 0 auto;
+}
+
+.padding1 .modal-body .but5 img{
+    display:block; width:120px;
+    margin:0px auto 20px auto; padding:6px 0px;
+    font-size:30px;
+    color:#FFF;
+    text-align:center;
+    border:none;
+    position: relative;
+    top:-210px;
+}
+.draw-cgl img{
+    display:block; width:130px !important;
+    margin:0px auto 20px auto; padding:6px 0px;
+    font-size:30px;
+    color:#FFF;
+    text-align:center;
+    border:none;
+    position: relative;
+    top:-240px;
+}
+.draw-title{
+    display:block; width:200px !important;
+    margin:0px auto 20px auto; padding:6px 0px;
+    font-size:22px;
+    color:#FFF;
+    text-align:center;
+    border:none;
+    position: relative;
+    top:-230px;
+}
+</style>
