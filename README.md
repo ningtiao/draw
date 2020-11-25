@@ -7,7 +7,7 @@
 
 
 ## 项目运行
-git clone https://github.com/yjx-passion/vue2.0-module
+git clone https://github.com/endless-z/draw.git
 
 直接打开即可 
 
